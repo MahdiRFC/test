@@ -15,9 +15,11 @@ spec:
       containers:
       - name: mypythondockerrepo
         image: MyACR619.azurecr.io/MahdiRFC/test:#{Build.BuildId}#
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 5000      
+        imagePullPolicy: IfNotPresent
+      imagePullSecrets:
+      -name: acr-secret
+      ports:
+      - containerPort: 5000      
 # service type loadbalancer       
 ---
 apiVersion: v1
