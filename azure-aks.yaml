@@ -14,9 +14,11 @@ spec:
     spec:
       containers:
       - name: mypythondockerrepo
-        image: MyACR619.azurecr.io/MahdiRFC/test:#{Build.BuildId}#
+        image: myacrrepo312.azurecr.io/akannan1087/mypythondockerrepo:#{Build.BuildId}#
         ports:
         - containerPort: 5000
+        #image: MyACR619.azurecr.io/MahdiRFC/test:#{Build.BuildId}#       
+
 # service type loadbalancer       
 ---
 apiVersion: v1
