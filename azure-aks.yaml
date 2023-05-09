@@ -13,12 +13,12 @@ spec:
         app: my-python-app
     spec:
       imagePullSecrets:
-      -name: acr-secret
+      - name: acr-secret
       containers:
       - name: mypythondockerrepo
         image: MyACR619.azurecr.io/MahdiRFC/test:#{Build.BuildId}#
-      ports:
-      - containerPort: 5000      
+        ports:
+        - containerPort: 5000
 # service type loadbalancer       
 ---
 apiVersion: v1
