@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: my-python-deployment
 spec:
+  serviceAccountName: appsa
   replicas: 2
   selector:
     matchLabels:
@@ -12,6 +13,7 @@ spec:
       labels:
         app: my-python-app
     spec:
+      serviceAccountName: appsa
       containers:
       - name: mypythondockerrepo
         image: MyACR619.azurecr.io/MahdiRFC/test:#{Build.BuildId}#
@@ -24,6 +26,7 @@ kind: Service
 metadata:
   name: my-python-app-svc
 spec:
+  serviceAccountName: appsa
   selector:
     app: my-python-app
   ports:
