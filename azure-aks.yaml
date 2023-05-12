@@ -16,7 +16,7 @@ spec:
       - name: acr-secret
       containers:
       - name: mypythondockerrepo
-        image: myacr619.azurecr.io/mahdirfc/test:latest
+        image: myacr619.azurecr.io/mahdirfc/test:12
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
